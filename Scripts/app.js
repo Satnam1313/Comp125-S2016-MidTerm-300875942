@@ -60,8 +60,7 @@
       
      
      
-
-    // check to see if paragraph one exists
+// check to see if paragraph one exists
     var paragraphElementsLength = paragraphElements.length;
     
     // if paragraph exists then populate each paragraph on the page
@@ -71,77 +70,36 @@
          paragraphElements[index].innerHTML = paragraphs[index];
         }
     }
-    /**
-     * This function uses the document.title to switch javascript function 
-     * when the page switches
-     * 
-     * @function PageSwitcher
-     * @returns {void}
-     */
-    var contactForm=document.getElementById("contactForm");
-
-  if(contactForm) {
-       /**
-    * This function provides JavaScript code for the Contact page
-    * 
-    * @function Contact
-    * @returns {void}
-    */
-    function Contact() {
-        // create a reference for your form
-        var contactForm = document.getElementById("contactForm");
-        firstName = document.getElementById("firstName");
-        lastName = document.getElementById("lastName");
-        email = document.getElementById("email");
-        contactNumber = document.getElementById("contactNumber");
-        yourMessage = document.getElementById("yourMessage");
-
-        contactForm.addEventListener("submit", onFormSubmit);
-        
-    }
-    }
+    // create a reference to the form
+    var contactForm = document.getElementById("contactForm");
     
-
     
-
-    
-
-   
-
-    // CALLBACK (EVENT HANDLER) functions ++++++++++++++++++++++++++
-
-    /**
-     * callback / event handler for the contactForm submit event
-     * 
-     * @method onFormSubmit
-     * @returns {void}
-     */
-    function onFormSubmit(event){
-            console.info("entered onFormSubmit event");
-
-            // stops the form from clearing and trying to submit
+    if(contactForm) {
+        // event listener with inline anonymous event handler function
+        contactForm.addEventListener("submit", function(event){
             event.preventDefault();
-            // displays the forms values to the console
-            displayFormValues();
-            // reset the form
+            console.log("submitted");
+            showFormInput();
             contactForm.reset();
+        });
     }
-
+    
     /**
-     * displays form values on the page and console
+     * This function shows the input from each form field 
+     * on the console
      * 
-     * @method displayFormValues
-     * @returns {void}
+     * @method showFormInput
+     * @return {void} 
      */
-    function displayFormValues() {
-       
-        console.log("++++++++++++++++++++++++++++++++++++++++++");
+    function showFormInput() {
+        console.log("++++++++++++++++++++++++++++++++");
         console.log("First Name: " + firstName.value);
         console.log("Last Name: " + lastName.value);
-        console.log("Email: " + email.value);
-        console.log("Contact Number: " + contactNumber.value);
-        console.log("Your Message: " + yourMessage.value);
-        console.log("++++++++++++++++++++++++++++++++++++++++++");
-    }
+        console.log("Email : " + email.value);
+        console.log("Contact no: " + contactNumber.value);
+        console.log("Message: " + yourMessage.value);
+        console.log("++++++++++++++++++++++++++++++++");
+}
+
 
 })();
