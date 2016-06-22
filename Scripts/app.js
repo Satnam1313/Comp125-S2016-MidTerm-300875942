@@ -6,7 +6,7 @@
  * @date June 22, 2016
  * 
  * StudentID: 300875942
- * website: comp125-S2016-MidTerm-300875942
+ * website: 
  * @description This file is the main javascript file for the web site
  */
 
