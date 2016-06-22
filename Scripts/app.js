@@ -73,7 +73,10 @@
     
     
     if(contactForm) {
-        /** event listener with inline anonymous event handler function */
+        /** 
+         * 
+         * 
+         * event listener with inline anonymous event handler function */
         contactForm.addEventListener("submit", function(event){
             event.preventDefault();
             console.log("submitted");
